@@ -28,6 +28,9 @@
   --border-radius-base: 12px;
   --transition-speed: 0.4s;
   --shadow-base: 0 4px 25px rgba(0, 0, 0, 0.4);
+  --shadow-secodary: 0 4px 25px rgba(0, 176, 225, 0.477);
+  --shadow-primary: 0 4px 25px rgba(225, 71, 0, 0.477);
+  --shadow-accent: 0 4px 25px rgba(225, 206, 0, 0.477);
   /* Define spacing variables separately */
   --section-vertical-spacing: 6rem;
   --section-horizontal-spacing: 5%;
@@ -39,7 +42,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', 'Cairo', sans-serif;
+  font-family: 'Roboto', 'Cairo', sans-serif, 'Noto_Nastaliq_Urdu';
   background-size: cover;
 }
 
@@ -111,8 +114,8 @@ a:hover {
 
 /* Main CTA Button */
 .cta-button {
-  background-color: var(--color-primary);
-  color: var(--color-text-dark);
+  background-color: var(--color-secondary);
+  color: rgb(18, 18, 18);
   padding: 12px 30px;
   border-radius: 50px;
   font-weight: 700;
@@ -124,8 +127,8 @@ a:hover {
 }
 
 .cta-button:hover {
-  background-color: #E64A19;
   transform: translateY(-3px);
+  background-color: var(--color-primary);
   box-shadow: 0 10px 30px rgba(255, 87, 34, 0.6);
   color: var(--color-text-dark);
 }
@@ -186,15 +189,16 @@ a:hover {
 
 /* NEW: Increase Logo Icon size */
 .logo-icon-wrapper {
-  width: 40px;
-  height: 40px;
+  width: 120px;
+  height: 70px;
+  padding: 1px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-secondary);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .logo-icon-wrapper img {
@@ -261,11 +265,11 @@ a:hover {
 .intro-section .left-content {
   flex: 0 0 35%;
   /* Reduced space for text */
-  text-align: left;
+  text-align: center;
 }
 
 .intro-section .right-content {
-  flex: 0 0 60%;
+  flex: 0 0 53%;
   /* Increased space for video */
 }
 
@@ -274,11 +278,14 @@ a:hover {
   font-weight: 900;
   margin-bottom: 25px;
   line-height: 1.25;
-  color: var(--color-text-dark);
+  font-family: "Aref Ruqaa Ink", serif;
+  direction: rtl;
 }
 
 .giant-slogan span.highlight {
   color: var(--color-primary);
+  font-family: "Handjet", sans-serif;
+  font-weight: lighter;
 }
 
 .sub-text {
@@ -293,12 +300,14 @@ a:hover {
   box-shadow: var(--shadow-base);
   overflow: hidden;
   position: relative;
+  transform: rotate(0deg);
   transition: transform 0.5s ease-in-out;
 }
 
 .hero-visual-container:hover {
-  transform: scale(1.01);
+  transform: scale(1.05) rotate(2deg);
   /* Reduced hover effect for large video */
+  box-shadow: var(--shadow-primary);
 }
 
 .hero-visual-container video {
@@ -334,7 +343,7 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.584);
+  background: rgba(0, 0, 0, 0.523);
   color: var(--color-primary);
   padding: 10px 20px;
   font-size: 1.15rem;
@@ -420,8 +429,9 @@ a:hover {
 }
 
 .who-we-are-section .right-content img:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) rotate(-2deg);
   /* Slightly reduced scale for large image */
+  box-shadow: var(--shadow-secodary);
 }
 
 
@@ -492,7 +502,7 @@ a:hover {
   color: var(--color-text-dark);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   justify-content: flex-end;
-  padding-bottom: 30px;
+
 }
 
 .member-photo {
@@ -530,12 +540,13 @@ a:hover {
 .member-name {
   font-size: 1.7rem;
   font-weight: 700;
-  margin-bottom: 5px;
+
 }
 
 .member-title {
   font-size: 1.1rem;
   color: var(--color-accent);
+  margin-bottom: 15px;
 }
 
 /* Back Face is now redundant but kept for safety */
@@ -581,6 +592,7 @@ a:hover {
   max-width: 100%;
   margin: 0;
   box-shadow: var(--shadow-base);
+
 }
 
 /* Existing Carousel Styles */

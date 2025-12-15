@@ -1,7 +1,36 @@
 // src/App.js
 
 import React, { useState, useEffect, useRef } from 'react';
+
 import './styles/App.css'; 
+
+import heroVideoFile from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/intro.mp4'; 
+
+import logoImageFile from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/omar.png';
+
+import omarImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import mohamedImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/mohamed.png';
+import joyImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/joy.png';
+import andrewImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import mahmoudImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import yassinImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/yassin.png';
+import hamadaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/hamada.png';
+import bahaaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import abdullahImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import ammarImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import alaaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/alaa.png';
+import ayatImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import habibaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import lojainImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import mariamImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/mariam.png';
+import sebaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import nadaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+import roaaImg from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/team/omar.png';
+
+
+import vidThumbnail from 'C:/Users/Omar Rabih/FCAICUGDCLUB/public/assets/thumbnails/thumbnail1.jpg';
+// import courseVideoFile from ''; 
+// import testimonialVideoFile from '';
 
 // IMPORTANT: Replace the placeholder paths with your actual asset paths.
 // Example: '/assets/team-logo.png' 
@@ -12,34 +41,55 @@ import './styles/App.css';
 
 const changingTexts = ["Build your first project in two months.", "Learn coding, art, and market entry.", "Compete in the biggest Game Jam challenge."];
 
-const heroVideoSrc = 'https://www.w3schools.com/html/mov_bbb.mp4'; // Replace with your Intro video path
+const heroVideoSrc = heroVideoFile; // Replace with your Intro video path
 const courseVideoSrc = 'https://www.w3schools.com/html/mov_bbb.mp4'; // New video for Course Section
+
 
 // Replace image URLs with actual paths (e.g., /assets/team/member1.jpg)
 const teamMembersData = [
-    { id: 1, name: 'Omar', title: 'Unity Track Lead', image: 'https://via.placeholder.com/400x500?text=Omar+Unity' },
-    { id: 2, name: 'Sara', title: 'Technical Artist', image: 'https://via.placeholder.com/400x500?text=Sara+Artist' },
-    { id: 3, name: 'Yousef', title: 'Operations Manager', image: 'https://via.placeholder.com/400x500?text=Yousef+Manager' },
-    { id: 4, name: 'Nour', title: 'Unreal Engine Instructor', image: 'https://via.placeholder.com/400x500?text=Nour+Unreal' },
-    { id: 5, name: 'Khaled', title: 'Level Designer', image: 'https://via.placeholder.com/400x500?text=Khaled+Designer' },
-    { id: 6, name: 'Ahmed', title: 'Creative Director', image: 'https://via.placeholder.com/400x500?text=Ahmed+Director' },
-    { id: 7, name: 'Leila', title: 'UI/UX Specialist', image: 'https://via.placeholder.com/400x500?text=Leila+UIUX' },
-    { id: 8, name: 'Tarek', title: 'Backend Programmer', image: 'https://via.placeholder.com/400x500?text=Tarek+Backend' },
-    { id: 9, name: 'Mona', title: 'Concept Artist', image: 'https://via.placeholder.com/400x500?text=Mona+Artist' },
-    { id: 10, name: 'Hassan', title: 'AI Developer', image: 'https://via.placeholder.com/400x500?text=Hassan+AI' },
+    { id: 1, name: 'Omar', title: 'Unity Track Lead', image: omarImg },
+    { id: 2, name: 'mohamed', title: 'Technical Artist', image: mohamedImg },
+    { id: 3, name: 'joy', title: 'Operations Manager', image:  joyImg},
+    { id: 4, name: 'yassin', title: 'Unreal Engine Instructor', image: yassinImg },
+    { id: 5, name: 'mariam', title: 'Level Designer', image:  mariamImg},
+    { id: 6, name: 'ahmed', title: 'Creative Director', image: hamadaImg},
+    { id: 7, name: 'alaa', title: 'UI/UX Specialist', image:  alaaImg},
+    { id: 8, name: 'abdullah', title: 'Backend Programmer', image: abdullahImg  },
+    { id: 9, name: 'mahmoud', title: 'Concept Artist', image:  mahmoudImg},
+    { id: 10, name: 'roaa', title: 'AI Developer', image: roaaImg},
+    { id: 10, name: 'andrew', title: 'AI Developer', image:  andrewImg},
+    { id: 10, name: 'nada', title: 'AI Developer', image:  nadaImg},
+    { id: 10, name: 'ammar', title: 'AI Developer', image:  ammarImg},
+    { id: 10, name: 'lojain', title: 'AI Developer', image:  lojainImg},
+    {id: 10, name: 'ayat', title: 'AI Developer', image:  ayatImg},
+    { id: 10, name: 'habiba', title: 'AI Developer', image: habibaImg},
+    { id: 10, name: 'abdelrahman', title: 'AI Developer', image:  bahaaImg},
+    { id: 10, name: 'seba', title: 'AI Developer', image:  sebaImg},
 ];
 
-const videoThumbnails = Array.from({ length: 10 }, (_, i) => ({ 
-    id: i + 1, 
-    thumbnail: `https://via.placeholder.com/300x180?text=Track+Video+${i + 1}`, 
-    youtubeLink: `#` 
-}));
+
+
+const totalThumbnails = 10; // عدد الصور الكلي الموجود لديك
+
+const videoThumbnails = Array.from({ length: totalThumbnails }, (_, i) => {
+    const index = i + 1;
+    
+    // 💡 المسار يبدأ من "/" (جذر الـ public)
+    // المسار النهائي سيكون: /assets/thumbnails/thumbnail1.jpg
+    const imagePath = vidThumbnail; 
+    
+    return {
+        id: index, 
+        thumbnail: imagePath, // ✅ استخدام المسار النسبي للصورة
+        youtubeLink: `#` 
+    };
+});
 
 const statsData = [
-    { label: 'Total Trained Students', icon: '🧑‍🎓', value: 920 },
-    { label: 'Certified Training Hours', icon: '⏳', value: 1500 },
-    { label: 'Graduation Projects Launched', icon: '🕹️', value: 45 },
-    { label: 'Employment Rate from Club', icon: '💼', value: 85 },
+    { label: 'Total Trained Students', icon: '🧑‍🎓', value: 20 },
+    { label: 'Certified Training Hours', icon: '⏳', value: 62 },
+    { label: 'Graduation Projects Launched', icon: '🕹️', value: 20 },
+    { label: 'Employment Rate from Club', icon: '💼', value: 15 },
 ];
 
 
@@ -112,7 +162,7 @@ const StatCard = ({ stat }) => {
 
 
 // ===================================================================
-// 🧭 2. Navbar Component (DGClub Update)
+// 🧭 2. Navbar Component (GDClub Update)
 // ===================================================================
 
 const Navbar = () => {
@@ -130,16 +180,16 @@ const Navbar = () => {
     };
     
     // Replace with your actual logo image path
-    const logoImagePath = "https://via.placeholder.com/30x30?text=DG"; 
+    const logoImagePath = logoImageFile; 
 
     return (
         <nav className={`navbar ${isScrolled ? 'solid-bg' : 'transparent-bg'}`}>
             <div className="container navbar-container">
                 <div className="logo">
                     <div className="logo-icon-wrapper">
-                        <img src={logoImagePath} alt="DGClub Logo" />
+                        <img src={logoImagePath} alt="GDClub Logo" />
                     </div>
-                    <span>DGClub</span>
+                    <span>FCAI GDC</span>
                 </div>
                 
                 <div className="nav-links">
@@ -222,8 +272,8 @@ const HeroSection = () => {
                 {/* Left Content (Slogan) - Smaller Flex Basis */}
                 <div className="left-content">
                     <h1 className="giant-slogan">
-                        متخليش الدنيا  
-                        <span className="highlight">تبكسلك.</span>
+                         متخليش الدنيا  
+                        <span className="highlight"> تبكسلك </span>
                     </h1>
                     <p className="sub-text">
                         A student-run tech community focused on training FCAI CU students to master the art of digital game development from scratch to advanced stages.
@@ -283,7 +333,7 @@ const WhoWeAre = () => {
                 {/* RIGHT CONTENT (Image) - This DIV moves to the left in CSS (row-reverse) */}
                 <div className="right-content">
                     {/* Replace with your actual community image path */}
-                    <img src="https://via.placeholder.com/600x400?text=Students+Discussion+DGClub" alt="Club Members Photo" />
+                    <img src="./public/team.jpg" alt="Club Members Photo" />
                 </div>
                 
                 {/* LEFT CONTENT (Text) - This DIV moves to the right in CSS (row-reverse) */}
@@ -301,7 +351,7 @@ const WhoWeAre = () => {
                         href="#team"
                         onClick={(e) => document.getElementById('team').scrollIntoView({ behavior: 'smooth' })}
                         className="cta-button" 
-                        style={{ marginTop: '20px', backgroundColor: 'var(--color-secondary)' }}
+                        style={{ marginTop: '20px'}}
                     >
                         Meet Our Experts
                     </a>
@@ -384,20 +434,15 @@ const CourseIllustration = () => {
                         <div className="large-video-box">
                             <video
                                 ref={videoRef}
-                                autoPlay 
-                                loop 
+                                 
+                                controls
                                 muted={isMuted} 
-                                playsInline
+                                autoPlay={false}
                                 poster="https://via.placeholder.com/600x400?text=Course+Intro+Poster"
                             >
                                 <source src={courseVideoSrc} type="video/mp4" />
                             </video>
-                            <button 
-                                className="cta-button mute-toggle-btn" 
-                                onClick={toggleMute}
-                            >
-                                {isMuted ? '🔇 Unmute' : '🔊 Mute'}
-                            </button>
+                            
                         </div>
                     </div>
                     
@@ -514,7 +559,8 @@ const TestimonialsSection = () => {
                         ref={videoRef}
                         autoPlay 
                         loop 
-                        muted={isMuted} 
+                        muted={isMuted}
+                        controls
                         playsInline // Important for mobile autoplay
                         poster="https://via.placeholder.com/900x500?text=Testimonial+Video+Poster"
                     >
