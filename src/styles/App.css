@@ -105,7 +105,7 @@ section {
   max-width: var(--max-content-width);
   width: 100%;
   margin: 0 auto;
-  padding: var(--section-vertical-spacing) var(--section-horizontal-spacing);
+  padding: clamp(2rem, 5vw, var(--section-vertical-spacing)) clamp(1rem, 4vw, var(--section-horizontal-spacing));
 }
 
 /* General Text Styles */
@@ -115,17 +115,19 @@ p.section-subtitle {
 }
 
 h2.section-title {
-  font-size: var(--font-size-h2);
+  font-size: clamp(1.7rem, 5vw, var(--font-size-h2));
   color: var(--color-text-dark);
   margin-bottom: var(--spacing-sm);
   font-weight: 900;
+  line-height: 1.3;
 }
 
 p.section-subtitle {
-  font-size: var(--font-size-subtitle);
+  font-size: clamp(0.95rem, 2vw, var(--font-size-subtitle));
   color: var(--color-text-light);
-  max-width: 750px;
+  max-width: min(750px, 90%);
   margin: 0 auto var(--spacing-xl);
+  line-height: 1.6;
 }
 
 a {
@@ -142,14 +144,15 @@ a:hover {
 .cta-button {
   background-color: var(--color-secondary);
   color: rgb(18, 18, 18);
-  padding: 12px 30px;
+  padding: clamp(10px, 2vw, 12px) clamp(25px, 4vw, 30px);
   border-radius: 50px;
   font-weight: 700;
-  font-size: var(--font-size-button);
+  font-size: clamp(0.9rem, 2vw, var(--font-size-button));
   transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
   box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
   display: inline-block;
   border: none;
+  white-space: nowrap;
 }
 
 .cta-button:hover {
@@ -182,7 +185,7 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1rem var(--section-horizontal-spacing);
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 4vw, var(--section-horizontal-spacing));
 }
 
 .navbar.transparent-bg {
@@ -215,16 +218,17 @@ a:hover {
 
 /* NEW: Increase Logo Icon size */
 .logo-icon-wrapper {
-  width: 120px;
-  height: 70px;
+  width: clamp(60px, 12vw, 120px);
+  height: clamp(40px, 7vw, 70px);
   padding: 1px;
-  margin-right: 10px;
+  margin-right: clamp(6px, 1.5vw, 10px);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0);
+  flex-shrink: 0;
 }
 
 .logo-icon-wrapper img {
@@ -278,14 +282,14 @@ a:hover {
 
 .intro-section .container {
   /* Adjust top padding for the Hero section to accommodate fixed Navbar */
-  padding-top: calc(var(--section-vertical-spacing) + 60px);
+  padding-top: calc(clamp(2rem, 5vw, var(--section-vertical-spacing)) + clamp(50px, 8vw, 60px));
 }
 
 .split-layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--gap-xxl);
+  gap: clamp(20px, 5vw, var(--gap-xxl));
 }
 
 /* NEW: Adjust Flex Basis for Intro Section */
@@ -301,12 +305,13 @@ a:hover {
 }
 
 .giant-slogan {
-  font-size: var(--font-size-h1);
+  font-size: clamp(2rem, 8vw, var(--font-size-h1));
   font-weight: 900;
-  margin-bottom: 25px;
+  margin-bottom: clamp(15px, 3vw, 25px);
   line-height: 1.25;
   font-family: "Aref Ruqaa Ink", serif;
   direction: rtl;
+  word-wrap: break-word;
 }
 
 .giant-slogan span.highlight {
@@ -316,19 +321,23 @@ a:hover {
 }
 
 .sub-text {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: var(--color-text-light);
   margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
 }
 
 /* Hero Image/Video Container */
 .hero-visual-container {
+  width: 100%;
+  max-width: 100%;
   border-radius: var(--border-radius-base);
   box-shadow: var(--shadow-base);
   overflow: hidden;
   position: relative;
   transform: rotate(0deg);
   transition: transform 0.5s ease-in-out;
+  aspect-ratio: 16 / 9;
 }
 
 .hero-visual-container:hover {
@@ -339,30 +348,27 @@ a:hover {
 
 .hero-visual-container video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
   object-fit: cover;
-}
-
-.hero-visual-container {
-  width: 100%;
-  max-width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 /* Mute/Unmute Button Styling */
 .hero-visual-container .mute-toggle-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 8px 15px;
+  top: clamp(10px, 2vw, 15px);
+  right: clamp(10px, 2vw, 15px);
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 15px);
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.6);
   color: var(--color-text-dark);
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
   border-radius: 6px;
   box-shadow: none;
   transition: background-color 0.3s;
+  white-space: nowrap;
 }
 
 .hero-visual-container .mute-toggle-btn:hover {
@@ -379,8 +385,8 @@ a:hover {
   right: 0;
   background: rgba(0, 0, 0, 0.523);
   color: var(--color-primary);
-  padding: 10px 20px;
-  font-size: 1.15rem;
+  padding: clamp(8px, 1.5vw, 10px) clamp(15px, 3vw, 20px);
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
   font-weight: 700;
   text-align: center;
 }
@@ -422,12 +428,12 @@ a:hover {
 
 .who-we-are-section h2 {
   text-align: left;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  margin-bottom: clamp(15px, 3vw, 20px);
 }
 
 .who-we-are-section p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.8;
 }
 
@@ -438,17 +444,23 @@ a:hover {
 }
 
 .features-list li {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
   color: var(--color-text-dark);
   display: flex;
   align-items: flex-start;
+  line-height: 1.6;
 }
 
 .features-list li .icon {
   font-size: 1.3rem;
   margin-right: 10px;
   color: var(--color-primary);
+}
+
+.who-we-are-section .right-content {
+  width: 100%;
+  max-width: 100%;
 }
 
 .who-we-are-section .right-content img {
@@ -460,6 +472,7 @@ a:hover {
   transition: transform 0.5s;
   object-fit: cover;
   display: block;
+  aspect-ratio: 4 / 3;
 }
 
 .who-we-are-section .right-content img:hover {
@@ -482,15 +495,18 @@ a:hover {
 .team-grid {
   /* NEW: 5 columns on large screens with smaller gaps */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 15vw, 200px), 1fr));
+  gap: clamp(15px, 2.5vw, 20px);
   /* Reduced Gap */
-  margin-top: 50px;
+  margin-top: clamp(30px, 5vw, 50px);
 }
 
 .team-member-wrapper {
   /* Removed perspective */
-  height: 350px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  min-height: 250px;
+  max-height: 400px;
   /* Adjusted height for better fit */
 }
 
@@ -573,15 +589,14 @@ a:hover {
 }
 
 .member-name {
-  font-size: 1.7rem;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
   font-weight: 700;
-
 }
 
 .member-title {
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
   color: var(--color-accent);
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 2vw, 15px);
 }
 
 /* Back Face is now redundant but kept for safety */
@@ -623,17 +638,25 @@ a:hover {
   flex: 1;
 }
 
+.course-top-layout .video-side {
+  width: 100%;
+  max-width: 100%;
+}
+
 .course-top-layout .video-side .large-video-box {
   max-width: 100%;
   width: 100%;
   margin: 0;
   box-shadow: var(--shadow-base);
+  aspect-ratio: 16 / 9;
 }
 
 .course-top-layout .video-side .large-video-box video {
   width: 100%;
+  height: 100%;
   max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
 /* Existing Carousel Styles */
@@ -670,9 +693,12 @@ a:hover {
 
 .thumbnail-item {
   flex-shrink: 0;
-  width: 300px;
-  height: 180px;
-  margin-right: 20px;
+  width: clamp(180px, 25vw, 300px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  min-height: 120px;
+  max-height: 200px;
+  margin-right: clamp(12px, 2vw, 20px);
   border-radius: var(--border-radius-base);
   overflow: hidden;
   cursor: pointer;
@@ -718,7 +744,7 @@ a:hover {
 
 .mv-card {
   flex: 1;
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   border-radius: var(--border-radius-base);
   background-color: var(--color-off-white-bg);
   box-shadow: var(--shadow-base);
@@ -730,15 +756,15 @@ a:hover {
 }
 
 .mv-card h3 {
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
   color: var(--color-secondary);
-  margin-bottom: 15px;
+  margin-bottom: clamp(10px, 2vw, 15px);
   border-bottom: 3px solid var(--color-primary);
-  padding-bottom: 10px;
+  padding-bottom: clamp(8px, 1.5vw, 10px);
 }
 
 .mv-card p {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--color-text-light);
   line-height: 1.7;
 }
@@ -746,14 +772,14 @@ a:hover {
 /* STATS CARDS (from old numbers section) */
 .stats-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 20vw, 250px), 1fr));
+  gap: clamp(20px, 3vw, 30px);
+  margin-top: clamp(25px, 4vw, 40px);
   text-align: center;
 }
 
 .stat-card {
-  padding: 30px;
+  padding: clamp(20px, 3vw, 30px);
   border-radius: var(--border-radius-base);
   text-align: center;
   background-color: var(--color-off-white-bg);
@@ -766,16 +792,17 @@ a:hover {
 }
 
 .stat-card .stat-value {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 900;
   margin-bottom: 5px;
   color: var(--color-secondary);
 }
 
 .stat-card .stat-label {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: 700;
   color: var(--color-text-dark);
+  line-height: 1.4;
 }
 
 /*========================================
@@ -787,33 +814,32 @@ a:hover {
 }
 
 .large-video-box {
-  max-width: 900px;
-  margin: 40px auto 0;
+  width: 100%;
+  max-width: min(900px, 95%);
+  margin: clamp(20px, 4vw, 40px) auto 0;
   border-radius: var(--border-radius-base);
   box-shadow: 0 0 30px rgba(255, 87, 34, 0.2);
   overflow: hidden;
   position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .large-video-box video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   max-width: 100%;
-  object-fit: contain;
-}
-
-.large-video-box {
-  width: 100%;
-  max-width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
 }
 
 .video-caption {
   text-align: center;
-  margin-top: 15px;
-  font-size: 1.2rem;
+  margin-top: clamp(10px, 2vw, 15px);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: var(--color-primary);
   font-weight: 700;
+  line-height: 1.5;
 }
 
 
@@ -827,8 +853,8 @@ a:hover {
 
 .contact-split-container {
   display: flex;
-  gap: 50px;
-  margin-top: 50px;
+  gap: clamp(30px, 5vw, 50px);
+  margin-top: clamp(30px, 5vw, 50px);
   text-align: left;
 }
 
@@ -845,13 +871,14 @@ a:hover {
 
 .contact-form input,
 .contact-form textarea {
-  padding: 15px;
+  padding: clamp(12px, 2vw, 15px);
   border: 1px solid #333;
   background-color: #444;
   color: var(--color-text-dark);
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   width: 100%;
+  line-height: 1.5;
 }
 
 .contact-form textarea {
@@ -862,25 +889,26 @@ a:hover {
 .contact-info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: clamp(15px, 3vw, 25px);
 }
 
 .contact-icon-wrapper {
   background-color: var(--color-primary);
   color: var(--color-light-bg);
-  width: 50px;
-  height: 50px;
+  width: clamp(40px, 6vw, 50px);
+  height: clamp(40px, 6vw, 50px);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
-  margin-right: 15px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-right: clamp(12px, 2vw, 15px);
+  flex-shrink: 0;
 }
 
 .info-text strong {
   display: block;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: var(--color-text-dark);
   margin-bottom: 3px;
 }
@@ -1154,7 +1182,10 @@ a:hover {
   }
   
   .team-member-wrapper {
-    height: 300px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    min-height: 280px;
+    max-height: 350px;
   }
   
   .stats-cards-container {
@@ -1237,20 +1268,21 @@ a:hover {
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  /* Mobile menu CTA button styling */
-  .nav-links .mobile-menu-cta {
+  
+  /* Style registration button inside mobile menu */
+  .nav-links .desktop-cta {
     margin-top: 20px;
     text-align: center;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 30px;
     width: auto;
-    display: inline-block;
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    display: block;
   }
+
 
   /* Mobile Menu Backdrop */
   .mobile-menu-backdrop {
@@ -1561,7 +1593,10 @@ a:hover {
   }
 
   .team-member-wrapper {
-    height: 280px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    min-height: 250px;
+    max-height: 320px;
   }
 
   .member-name {
@@ -1583,8 +1618,11 @@ a:hover {
   }
 
   .thumbnail-item {
-    width: 250px;
-    height: 150px;
+    width: clamp(180px, 30vw, 250px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 120px;
+    max-height: 160px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;
@@ -1775,7 +1813,10 @@ a:hover {
   }
 
   .team-member-wrapper {
-    height: 250px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    min-height: 200px;
+    max-height: 280px;
   }
 
   .member-name {
@@ -1792,8 +1833,11 @@ a:hover {
   }
 
   .thumbnail-item {
-    width: 200px;
-    height: 120px;
+    width: clamp(150px, 35vw, 200px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 100px;
+    max-height: 140px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;
@@ -1877,8 +1921,11 @@ a:hover {
   }
 
   .thumbnail-item {
-    width: 180px;
-    height: 110px;
+    width: clamp(140px, 40vw, 180px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 90px;
+    max-height: 120px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;

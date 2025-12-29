@@ -224,20 +224,12 @@ const Navbar = () => {
                             href="/registration-link"
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="cta-button mobile-menu-cta" 
+                            className="cta-button desktop-cta" 
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             Register Now
                         </a>
                     </div>
-                    <a 
-                        href="/registration-link"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="cta-button desktop-cta" 
-                    >
-                        Register Now
-                    </a>
                     <button 
                         className="mobile-menu-toggle"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
