@@ -2,34 +2,32 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-import './styles/App.css'; 
+import './styles/App.css';
 
-import heroVideoFile from '../public/intro.mp4'; 
+const heroVideoFile = '/intro.mp4';
+const logoImageFile = '/omar.png';
 
-import logoImageFile from '../public/omar.png';
+const omarImg = '/assets/team/omar.png';
+const mohamedImg = '/assets/team/mohamed.png';
+const joyImg = '/assets/team/joy.png';
+const andrewImg = '/assets/team/omar.png';
+const mahmoudImg = '/assets/team/omar.png';
+const yassinImg = '/assets/team/yassin.png';
+const hamadaImg = '/assets/team/hamada.png';
+const bahaaImg = '/assets/team/omar.png';
+const abdullahImg = '/assets/team/omar.png';
+const ammarImg = '/assets/team/omar.png';
+const alaaImg = '/assets/team/alaa.png';
+const ayatImg = '/assets/team/omar.png';
+const habibaImg = '/assets/team/omar.png';
+const lojainImg = '/assets/team/omar.png';
+const mariamImg = '/assets/team/mariam.png';
+const sebaImg = '/assets/team/omar.png';
+const nadaImg = '/assets/team/omar.png';
+const roaaImg = '/assets/team/omar.png';
 
-import omarImg from '../public/assets/team/omar.png';
-import mohamedImg from '../public/assets/team/mohamed.png';
-import joyImg from '../public/assets/team/joy.png';
-import andrewImg from '../public/assets/team/omar.png';
-import mahmoudImg from '../public/assets/team/omar.png';
-import yassinImg from '../public/assets/team/yassin.png';
-import hamadaImg from '../public/assets/team/hamada.png';
-import bahaaImg from '../public/assets/team/omar.png';
-import abdullahImg from '../public/assets/team/omar.png';
-import ammarImg from '../public/assets/team/omar.png';
-import alaaImg from '../public/assets/team/alaa.png';
-import ayatImg from '../public/assets/team/omar.png';
-import habibaImg from '../public/assets/team/omar.png';
-import lojainImg from '../public/assets/team/omar.png';
-import mariamImg from '../public/assets/team/mariam.png';
-import sebaImg from '../public/assets/team/omar.png';
-import nadaImg from '../public/assets/team/omar.png';
-import roaaImg from '../public/assets/team/omar.png';
-
-
-import vidThumbnail from '../public/assets/thumbnails/thumbnail1.jpg';
-import teamImg from '../public/assets/team/team.png';
+const vidThumbnail = '/assets/thumbnails/thumbnail1.jpg';
+const teamImg = '/assets/team/team.png';
 // import courseVideoFile from ''; 
 // import testimonialVideoFile from '';
 
