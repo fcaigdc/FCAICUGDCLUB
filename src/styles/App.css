@@ -422,7 +422,7 @@ a:hover {
   border-radius: var(--border-radius-base);
   box-shadow: var(--shadow-base);
   transition: transform 0.5s;
-  width: 90%;
+  width: 100%;
   /* Ensure image fills container */
   object-fit: fill;
 }
