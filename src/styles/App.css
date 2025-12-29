@@ -31,12 +31,12 @@
   --shadow-secodary: 0 4px 25px rgba(0, 176, 225, 0.477);
   --shadow-primary: 0 4px 25px rgba(225, 71, 0, 0.477);
   --shadow-accent: 0 4px 25px rgba(225, 206, 0, 0.477);
-  
+
   /* Responsive Spacing Variables */
   --section-vertical-spacing: 6rem;
   --section-horizontal-spacing: 5%;
   --max-content-width: 1550px;
-  
+
   /* Responsive Font Sizes */
   --font-size-h1: 4.8rem;
   --font-size-h2: 2.8rem;
@@ -46,7 +46,7 @@
   --font-size-button: 1.1rem;
   --font-size-nav: 1.05rem;
   --font-size-logo: 1.7rem;
-  
+
   /* Responsive Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -54,7 +54,7 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 4rem;
-  
+
   /* Responsive Gaps */
   --gap-sm: 20px;
   --gap-md: 30px;
@@ -617,8 +617,8 @@ a:hover {
 /* NEW: Layout for the top section (Video/Text) */
 .course-top-layout {
   display: flex;
-  gap: 50px;
-  margin-bottom: 4rem;
+  gap: clamp(30px, 4vw, 50px);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
   align-items: center;
 }
 
@@ -627,11 +627,20 @@ a:hover {
   text-align: left;
 }
 
-.course-top-layout .text-content h2,
-.course-top-layout .text-content p {
+.course-top-layout .text-content h2 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   text-align: left;
   max-width: none;
-  margin: 0 0 1rem 0;
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1rem) 0;
+  line-height: 1.3;
+}
+
+.course-top-layout .text-content p {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  text-align: left;
+  max-width: none;
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1rem) 0;
+  line-height: 1.6;
 }
 
 .course-top-layout .video-side {
@@ -664,11 +673,16 @@ a:hover {
   overflow: hidden;
   position: relative;
   border-radius: var(--border-radius-base);
+  max-width: min(95%, 1200px);
+  margin: 0 auto;
+  width: 100%;
 }
 
 .carousel-view {
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .carousel-track {
@@ -693,12 +707,12 @@ a:hover {
 
 .thumbnail-item {
   flex-shrink: 0;
-  width: clamp(180px, 25vw, 300px);
+  width: clamp(150px, 20vw, 280px);
   height: auto;
   aspect-ratio: 16 / 9;
-  min-height: 120px;
-  max-height: 200px;
-  margin-right: clamp(12px, 2vw, 20px);
+  min-height: 100px;
+  max-height: 180px;
+  margin-right: clamp(10px, 1.5vw, 18px);
   border-radius: var(--border-radius-base);
   overflow: hidden;
   cursor: pointer;
@@ -1013,15 +1027,15 @@ a:hover {
   .mobile-menu-toggle {
     display: block !important;
   }
-  
+
   .desktop-cta {
     display: none !important;
   }
-  
+
   .nav-links:not(.mobile-open) {
     display: none !important;
   }
-  
+
   .nav-links.mobile-open {
     display: flex !important;
   }
@@ -1032,11 +1046,11 @@ a:hover {
   .mobile-menu-toggle {
     display: none !important;
   }
-  
+
   .desktop-cta {
     display: inline-block !important;
   }
-  
+
   .nav-links {
     display: flex !important;
   }
@@ -1107,27 +1121,27 @@ a:hover {
     --gap-xxl: 60px;
     --gap-xl: 45px;
   }
-  
+
   .giant-slogan {
     font-size: var(--font-size-h1);
   }
-  
+
   h2.section-title {
     font-size: var(--font-size-h2);
   }
-  
+
   .logo {
     font-size: var(--font-size-logo);
   }
-  
+
   .nav-links {
     gap: 25px;
   }
-  
+
   .nav-links a {
     font-size: var(--font-size-nav);
   }
-  
+
   .cta-button {
     font-size: var(--font-size-button);
     padding: 11px 28px;
@@ -1154,40 +1168,40 @@ a:hover {
     --spacing-xl: 2.5rem;
     --spacing-lg: 2rem;
   }
-  
+
   .giant-slogan {
     font-size: var(--font-size-h1);
   }
-  
+
   h2.section-title {
     font-size: var(--font-size-h2);
   }
-  
+
   .logo {
     font-size: var(--font-size-logo);
   }
-  
+
   .logo-icon-wrapper {
     width: 110px;
     height: 65px;
   }
-  
+
   .nav-links {
     gap: var(--gap-md);
   }
-  
+
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--gap-md);
   }
-  
+
   .team-member-wrapper {
     height: auto;
     aspect-ratio: 3 / 4;
     min-height: 280px;
     max-height: 350px;
   }
-  
+
   .stats-cards-container {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--gap-md);
@@ -1196,18 +1210,20 @@ a:hover {
 
 /* Tablets and Small Desktops (768px - 1023px) */
 @media (max-width: 1023px) {
+
   /* Ensure burger menu is visible */
   .mobile-menu-toggle {
     display: block !important;
   }
-  
+
   .desktop-cta {
     display: none !important;
   }
-  
+
   .nav-links:not(.mobile-open) {
     display: none !important;
   }
+
   :root {
     --section-vertical-spacing: 4rem;
     --section-horizontal-spacing: 4%;
@@ -1268,7 +1284,7 @@ a:hover {
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   /* Style registration button inside mobile menu */
   .nav-links .desktop-cta {
     margin-top: 20px;
@@ -1300,6 +1316,7 @@ a:hover {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -1322,11 +1339,11 @@ a:hover {
     width: 100px;
     height: 60px;
   }
-  
+
   .nav-links {
     gap: var(--gap-md);
   }
-  
+
   .cta-button {
     font-size: var(--font-size-button);
     padding: 11px 26px;
@@ -1544,7 +1561,7 @@ a:hover {
     width: 100%;
     max-width: 100%;
   }
-  
+
   .hero-visual-container video {
     width: 100%;
     max-width: 100%;
@@ -1617,17 +1634,21 @@ a:hover {
     font-size: var(--font-size-h3);
   }
 
+  .thumbnail-carousel {
+    max-width: min(95%, 1000px);
+  }
+
   .thumbnail-item {
-    width: clamp(180px, 30vw, 250px);
+    width: clamp(150px, 22vw, 220px);
     height: auto;
     aspect-ratio: 16 / 9;
-    min-height: 120px;
-    max-height: 160px;
+    min-height: 100px;
+    max-height: 150px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;
   }
-  
+
   .thumbnail-item img {
     width: 100%;
     height: 100%;
@@ -1676,7 +1697,7 @@ a:hover {
     width: 100%;
     max-width: 100%;
   }
-  
+
   .large-video-box video {
     width: 100%;
     max-width: 100%;
@@ -1779,7 +1800,8 @@ a:hover {
   }
 
   .logo span {
-    display: none; /* Hide text on very small screens */
+    display: none;
+    /* Hide text on very small screens */
   }
 
   /* Hero Section */
@@ -1832,17 +1854,21 @@ a:hover {
     font-size: var(--font-size-h3);
   }
 
+  .thumbnail-carousel {
+    max-width: 100%;
+  }
+
   .thumbnail-item {
-    width: clamp(150px, 35vw, 200px);
+    width: clamp(130px, 28vw, 180px);
     height: auto;
     aspect-ratio: 16 / 9;
-    min-height: 100px;
-    max-height: 140px;
+    min-height: 90px;
+    max-height: 130px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;
   }
-  
+
   .thumbnail-item img {
     width: 100%;
     height: 100%;
@@ -1866,7 +1892,7 @@ a:hover {
   .stat-card .stat-value {
     font-size: 2.2rem;
   }
-  
+
   .stat-card .stat-label {
     font-size: var(--font-size-body);
   }
@@ -1907,11 +1933,11 @@ a:hover {
     --gap-lg: 12px;
     --spacing-xl: 1.25rem;
   }
-  
+
   .giant-slogan {
     font-size: var(--font-size-h1);
   }
-  
+
   h2.section-title {
     font-size: var(--font-size-h2);
   }
@@ -1920,17 +1946,21 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
+  .thumbnail-carousel {
+    max-width: 100%;
+  }
+
   .thumbnail-item {
-    width: clamp(140px, 40vw, 180px);
+    width: clamp(120px, 32vw, 160px);
     height: auto;
     aspect-ratio: 16 / 9;
-    min-height: 90px;
-    max-height: 120px;
+    min-height: 80px;
+    max-height: 110px;
     max-width: 100%;
     margin-right: var(--gap-md);
     flex-shrink: 0;
   }
-  
+
   .thumbnail-item img {
     width: 100%;
     height: 100%;
@@ -1945,10 +1975,169 @@ a:hover {
   }
 
   .giant-slogan {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
   }
 
   .nav-links {
     width: 300px;
+  }
+
+  .thumbnail-carousel {
+    max-width: 90%;
+  }
+
+  .thumbnail-item {
+    width: clamp(120px, 18vw, 180px);
+    min-height: 80px;
+    max-height: 120px;
+  }
+}
+
+/* Aspect Ratio Based Adjustments */
+/* Wide screens (landscape tablets, wide monitors) */
+@media (min-aspect-ratio: 16/9) {
+  .giant-slogan {
+    font-size: clamp(3rem, 7vw, var(--font-size-h1));
+  }
+
+  h2.section-title {
+    font-size: clamp(2rem, 4.5vw, var(--font-size-h2));
+  }
+
+  .hero-visual-container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .thumbnail-carousel {
+    max-width: min(85%, 1100px);
+  }
+
+  .thumbnail-item {
+    width: clamp(160px, 18vw, 260px);
+    max-height: 170px;
+  }
+
+  .course-top-layout .video-side .large-video-box {
+    max-width: 95%;
+  }
+}
+
+/* Square/Portrait screens */
+@media (max-aspect-ratio: 4/3) {
+  .giant-slogan {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.2;
+  }
+
+  .hero-visual-container {
+    max-width: 100%;
+  }
+
+  .thumbnail-carousel {
+    max-width: 100%;
+  }
+
+  .thumbnail-item {
+    width: clamp(140px, 22vw, 220px);
+    min-height: 90px;
+    max-height: 150px;
+  }
+
+  .course-top-layout {
+    gap: clamp(20px, 3vw, 40px);
+  }
+
+  .course-top-layout .text-content h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-aspect-ratio: 21/9) {
+  .thumbnail-carousel {
+    max-width: min(80%, 1400px);
+  }
+
+  .thumbnail-item {
+    width: clamp(180px, 16vw, 300px);
+    max-height: 200px;
+  }
+
+  .container {
+    max-width: min(var(--max-content-width), 90%);
+  }
+}
+
+/* Tall/narrow screens (portrait phones) */
+@media (max-aspect-ratio: 9/16) {
+  .giant-slogan {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .thumbnail-item {
+    width: clamp(120px, 25vw, 180px);
+    min-height: 80px;
+    max-height: 120px;
+  }
+
+  .course-top-layout .text-content h2 {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+  }
+
+  .course-top-layout .text-content p {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  }
+}
+
+/* Adjustments for different screen aspect ratios - Images */
+@media (min-aspect-ratio: 16/9) {
+  .who-we-are-section .right-content img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .team-member-wrapper {
+    max-height: 380px;
+  }
+
+  .large-video-box {
+    max-width: min(85%, 1000px);
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .who-we-are-section .right-content img {
+    max-width: 100%;
+  }
+
+  .team-member-wrapper {
+    max-height: 320px;
+  }
+
+  .large-video-box {
+    max-width: 100%;
+  }
+}
+
+/* Font size adjustments based on aspect ratio */
+@media (min-aspect-ratio: 2/1) {
+  :root {
+    --font-size-h1: clamp(4rem, 8vw, 5.5rem);
+    --font-size-h2: clamp(2.5rem, 5vw, 3.2rem);
+    --font-size-body: clamp(1.1rem, 2.2vw, 1.3rem);
+  }
+}
+
+@media (max-aspect-ratio: 3/4) {
+  :root {
+    --font-size-h1: clamp(2rem, 7vw, 3rem);
+    --font-size-h2: clamp(1.6rem, 4.5vw, 2.2rem);
+    --font-size-body: clamp(0.9rem, 2.5vw, 1.05rem);
+  }
+
+  .sub-text {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
   }
 }
