@@ -62,14 +62,14 @@
     align-items: center;
 }
 
-.nav-links a {
+.nav-links a:not(.cta-button) {
     color: var(--color-text-dark);
     font-size: var(--font-size-nav);
     font-weight: 700;
     position: relative;
 }
 
-.nav-links a::after {
+.nav-links a:not(.cta-button)::after {
     content: '';
     position: absolute;
     bottom: -5px;
