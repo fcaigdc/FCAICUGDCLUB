@@ -7,7 +7,7 @@ import HeroSection from "./components/HeroSection.jsx";
 import './styles/App.css';
 
 
-const heroVideoFile = 'intro.webm';
+
 
 const omarImg = 'assets/team/omar.webp';
 const mohamedImg = 'assets/team/mohamed.webp';
@@ -30,19 +30,9 @@ const roaaImg = 'assets/team/omar.webp';
 
 const vidThumbnail = 'assets/thumbnails/thumbnail1.jpg';
 const teamImg = 'assets/team/team.webp';
-// import courseVideoFile from ''; 
-// import testimonialVideoFile from '';
 
-// IMPORTANT: Replace the placeholder paths with your actual asset paths.
-// Example: '/assets/team-logo.webp' 
 
-// ===================================================================
-// 🛠️ 1. Dummy Data (English)
-// ===================================================================
 
-const changingTexts = ["Build your first project in two months.", "Learn coding, art, and market entry.", "Compete in the biggest Game Jam challenge."];
-
-const heroVideoSrc = heroVideoFile; // Replace with your Intro video path
 const courseVideoSrc = 'https://www.w3schools.com/html/mov_bbb.mp4'; // New video for Course Section
 
 

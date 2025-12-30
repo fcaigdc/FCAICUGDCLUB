@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const heroVideoSrc = "/intro.webm";
+const changingTexts = ["Build your first project in two months.", "Learn coding, art, and market entry.", "Compete in the biggest Game Jam challenge."];
+
 
 // ===================================================================
 // 🌟 3. Hero Section (Intro) - Layout & Content Changed
