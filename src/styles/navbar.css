@@ -93,6 +93,30 @@
     display: inline-block;
 }
 
+/* زرار التسجيل */
+.cta-button {
+    background-color: var(--color-secondary);
+    color: rgb(18, 18, 18);
+    padding: clamp(10px, 2vw, 12px) clamp(25px, 4vw, 30px);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 2vw, var(--font-size-button));
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.cta-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 87, 34, 0.5);
+}
+
+
 /* MOBILE */
 .mobile-menu-toggle {
     display: none;
