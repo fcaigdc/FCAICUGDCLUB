@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import logoImageFile from '/omar.webp'; // عدل المسار حسب ملفك
-import './styles/navbar.css'; // استورد الـ CSS العام
+import './src/styles/navbar.css'; // استورد الـ CSS العام
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
