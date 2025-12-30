@@ -50,15 +50,6 @@ const Navbar = () => {
                         <a href="#mission-vision" onClick={(e) => scrollToSection(e, 'mission-vision')}>Missions</a>
                         <a href="#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')}>Testimonials</a>
                         <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a>
-                        <a 
-                            href="/registration-link"
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="cta-button desktop-cta" 
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Register Now
-                        </a>
                     </div>
 
                     <button 
