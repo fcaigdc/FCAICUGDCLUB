@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 4vw, var(--section-horizontal-spacing));
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 4vw, var(--section-horizontal-spacing));
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
