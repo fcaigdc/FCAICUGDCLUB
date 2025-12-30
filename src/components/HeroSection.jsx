@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const heroVideoSrc = "/intro.webm";
+const heroVideoSrc = "assets/intro.webm";
 const changingTexts = ["Build your first project in two months.", "Learn coding, art, and market entry.", "Compete in the biggest Game Jam challenge."];
 
 
