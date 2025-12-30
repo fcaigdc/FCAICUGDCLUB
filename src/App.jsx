@@ -4,31 +4,31 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar.jsx';
 
 import './styles/App.css';
-import './styles/navbar.css'; // استورد الـ CSS العام
 
-const heroVideoFile = '/intro.webm';
 
-const omarImg = '/assets/team/omar.webp';
-const mohamedImg = '/assets/team/mohamed.webp';
-const joyImg = '/assets/team/joy.webp';
-const andrewImg = '/assets/team/omar.webp';
-const mahmoudImg = '/assets/team/omar.webp';
-const yassinImg = '/assets/team/yassin.webp';
-const hamadaImg = '/assets/team/hamada.webp';
-const bahaaImg = '/assets/team/omar.webp';
-const abdullahImg = '/assets/team/omar.webp';
-const ammarImg = '/assets/team/omar.webp';
-const alaaImg = '/assets/team/alaa.webp';
-const ayatImg = '/assets/team/omar.webp';
-const habibaImg = '/assets/team/omar.webp';
-const lojainImg = '/assets/team/omar.webp';
-const mariamImg = '/assets/team/mariam.webp';
-const sebaImg = '/assets/team/omar.webp';
-const nadaImg = '/assets/team/omar.webp';
-const roaaImg = '/assets/team/omar.webp';
+const heroVideoFile = 'intro.webm';
 
-const vidThumbnail = '/assets/thumbnails/thumbnail1.jpg';
-const teamImg = '/assets/team/team.webp';
+const omarImg = 'assets/team/omar.webp';
+const mohamedImg = 'assets/team/mohamed.webp';
+const joyImg = 'assets/team/joy.webp';
+const andrewImg = 'assets/team/omar.webp';
+const mahmoudImg = 'assets/team/omar.webp';
+const yassinImg = 'assets/team/yassin.webp';
+const hamadaImg = 'assets/team/hamada.webp';
+const bahaaImg = 'assets/team/omar.webp';
+const abdullahImg = 'assets/team/omar.webp';
+const ammarImg = 'assets/team/omar.webp';
+const alaaImg = 'assets/team/alaa.webp';
+const ayatImg = 'assets/team/omar.webp';
+const habibaImg = 'assets/team/omar.webp';
+const lojainImg = 'assets/team/omar.webp';
+const mariamImg = 'assets/team/mariam.webp';
+const sebaImg = 'assets/team/omar.webp';
+const nadaImg = 'assets/team/omar.webp';
+const roaaImg = 'assets/team/omar.webp';
+
+const vidThumbnail = 'assets/thumbnails/thumbnail1.jpg';
+const teamImg = 'assets/team/team.webp';
 // import courseVideoFile from ''; 
 // import testimonialVideoFile from '';
 
