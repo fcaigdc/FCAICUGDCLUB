@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import './styles/App.css';
 
-const heroVideoFile = '/intro.mp4';
+const heroVideoFile = '/intro.webm';
 const logoImageFile = '/omar.webp';
 
 const omarImg = '/assets/team/omar.webp';
@@ -332,9 +332,9 @@ const HeroSection = () => {
                             muted={isMuted} 
                             playsInline // Important for mobile autoplay
                             poster="https://via.placeholder.com/600x400?text=Hero+Video+Poster"
-                            preload="auto"
+                            preload="metadata"
                         >
-                            <source src={heroVideoSrc} type="video/mp4" />
+                            <source src={heroVideoSrc} type="video/webm" />
                             Your browser does not support the video tag.
                         </video>
                         
